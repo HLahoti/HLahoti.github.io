@@ -1,75 +1,111 @@
 body {
-	margin: 0;
-	overflow-x: hidden;
+  margin: 0%;
+  overflow-x: hidden;
 }
-
-
 
 #p1 {
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient(to bottom right, #c4daff, #3e79dd);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-#welcome {
-	font-size: 7vw;
-	color: white;
-	width: 100%;
-	text-align: center;
-	position: absolute;
-	top: 20%;
+#p1, #p2 {
+  height: 100%;
+  width: 100%;
 }
 
-#hal {
-	width: 100%;
-	text-align: center;
-	position: absolute;
-	top: 35%;
-	color: #5a5d63;
-	font-size: 8vw;
-	font-family: 'B612 Mono', monospace;
+#p1 {
+  background-image: url("../assets/firstLogo.png");
+  background-color: #3489aae8;
 }
 
-#hal span {
-	animation: halspananum 10s infinite;
+#p1 #welcome {
+  font-family: inherit;
+  color: #1a0909;
+  font-size: 7vw;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  animation: welcomeanum 10s infinite;
 }
+
+@keyframes welcomeanum {
+  0% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
+  20% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
+  40% {
+    opacity: 0;
+    font-size: 7vw;
+  }
+  60% {
+    opacity: 1;
+    font-size: 7vw;
+  }
+  80% {
+    opacity: 0;
+    font-size: 7vw;
+  }
+  100% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
+}
+
+#p1 #hal {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  font-family: "B612 Mono", monospace;
+  color: black;
+  font-size: 8vw;
+  text-align: center;
+}
+
+#p1 #hal span {
+  animation: halspananum 10s infinite;
+}
+
 @keyframes halspananum {
-	0% {
-		opacity: 0;
-		font-size: 0;
-	}
-	20% {
-		opacity: 0;
-		font-size: 0;
-	}
-	40% {
-		opacity: 0;
-		font-size: 8vw;
-	}
-	60% {
-		opacity: 1;
-		font-size: 8vw;
-	}
-	80% {
-		opacity: 0;
-		font-size: 8vw;
-	}
-	100% {
-		opacity: 0;
-		font-size: 0;
-	}
+  0% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
+  20% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
+  40% {
+    opacity: 0;
+    font-size: 8vw;
+  }
+  60% {
+    opacity: 1;
+    font-size: 8vw;
+  }
+  80% {
+    opacity: 0;
+    font-size: 8vw;
+  }
+  100% {
+    opacity: 0;
+    font-size: 0.0001;
+  }
 }
-
-
 
 #p2 {
-	width: 100%;
-	height: 100%;
-	background-image: linear-gradient(to bottom left, #16e5c3, #6ae2af);
-	font-size: 3.5vw;
-	text-align: center;
-	color: #343434;
-	padding-right: 10%;
-	padding-left: 10%;
-	padding-top: 10%;
+  background-image: linear-gradient(to right, #343434, black);
+  font-family: inherit;
+  color: white;
+  font-size: 3.5vw;
+  text-align: center;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 10%;
 }
