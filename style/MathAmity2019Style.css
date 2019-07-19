@@ -518,8 +518,23 @@ body {
   background-size: cover;
   color: #454545;
   background-color: #a2c6afff;
+  transition: all 1s;
+  -webkit-clip-path: circle(60% at 50% 50%);
+  clip-path: circle(60% at 50% 50%);
   overflow-y: hidden;
   overflow-x: hidden;
+}
+#p6:hover {
+  animation: circlepond 10s;
+  animation-delay: 3s;
+  -webkit-clip-path: circle(100% at 50% 50%);
+  clip-path: circle(100% at 50% 50%);
+}
+@keyframes circlepond {
+  from, to {-webkit-clip-path: circle(100% at 50% 50%);
+  clip-path: circle(100% at 50% 50%);}
+  50% {-webkit-clip-path: circle(55% at 50% 50%);
+  clip-path: circle(55% at 50% 50%);}
 }
 
 #headp6 {
@@ -576,6 +591,13 @@ body {
   background-color: #c33d58ff;
   overflow-y: hidden;
   overflow-x: hidden;
+  -webkit-clip-path: polygon(0 50%,100% 0,100% 70%,0 100%);
+  clip-path: polygon(0 50%,100% 0,100% 70%,0 100%);
+  transition: all 1s;
+}
+#p8:hover {
+  -webkit-clip-path: polygon(0 0,100% 5%,100% 100%,0 90%);
+  clip-path: polygon(0 0,100% 5%,100% 100%,0 90%);
 }
 
 #headp8 {
