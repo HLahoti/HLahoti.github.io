@@ -399,6 +399,13 @@ body {
   background-attachment: fixed;
   background-size: cover;
   color: white;
+  -webkit-clip-path: polygon(0 50%,100% 0,100% 70%,0 100%);
+  clip-path: polygon(0 50%,100% 0,100% 70%,0 100%);
+  transition: all 2s;
+}
+#p2:hover {
+  -webkit-clip-path: polygon(0 5%,100% 0,100% 90%,0 100%);
+  clip-path: polygon(0 5%,100% 0,100% 90%,0 100%);
 }
 
 #headp2 {
@@ -449,8 +456,15 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   color: black;
+  -webkit-clip-path: polygon(0 0,50% 20%,100% 0,100% 80%,50% 100%,0 80%);
+  clip-path: polygon(0 0,50% 20%,100% 0,100% 80%,50% 100%,0 80%);
+  transition: all 1s; 
   overflow-y: hidden;
   overflow-x: hidden;
+}
+#p4:hover {
+  -webkit-clip-path: polygon(0 5%,50% 2.5%,100% 0,100% 90%,50% 95%,0 100%);
+  clip-path: polygon(0 5%,50% 2.5%,100% 0,100% 90%,50% 95%,0 100%);
 }
 
 #headp4 {
