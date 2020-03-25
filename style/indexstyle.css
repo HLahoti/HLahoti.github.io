@@ -10,102 +10,23 @@ body {
   background-position: center;
 }
 
-#p1, #p2 {
+#p1 {
   height: 100%;
   width: 100%;
 }
 
-#p1 {
-  background-image: url("../assets/firstLogo.png");
-  background-color: #3489aae8;
-}
-
-#p1 #welcome {
-  font-family: inherit;
-  color: #1a0909;
-  font-size: 7vw;
-  text-align: center;
-  width: 100%;
+#p1 div #subp + 1 {
   position: absolute;
-  top: 20%;
-  animation: welcomeanum 10s infinite;
 }
 
-@keyframes welcomeanum {
-  0% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-  20% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-  40% {
-    opacity: 0;
-    font-size: 7vw;
-  }
-  60% {
-    opacity: 1;
-    font-size: 7vw;
-  }
-  80% {
-    opacity: 0;
-    font-size: 7vw;
-  }
-  100% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-}
-
-#p1 #hal {
-  width: 100%;
+#p1 div #subp + 2 {
   position: absolute;
-  top: 35%;
-  font-family: "B612 Mono", monospace;
-  color: black;
-  font-size: 8vw;
-  text-align: center;
 }
 
-#p1 #hal span {
-  animation: halspananum 10s infinite;
+#p1 div #subp + 3 {
+  position: absolute;
 }
 
-@keyframes halspananum {
-  0% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-  20% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-  40% {
-    opacity: 0;
-    font-size: 8vw;
-  }
-  60% {
-    opacity: 1;
-    font-size: 8vw;
-  }
-  80% {
-    opacity: 0;
-    font-size: 8vw;
-  }
-  100% {
-    opacity: 0;
-    font-size: 0.0001;
-  }
-}
-
-#p2 {
-  background-image: linear-gradient(to right, #343434, black);
-  font-family: inherit;
-  color: white;
-  font-size: 3.5vw;
-  text-align: center;
-  padding-right: 10%;
-  padding-left: 10%;
-  padding-top: 10%;
+#p1 div #subp + 4 {
+  position: absolute;
 }

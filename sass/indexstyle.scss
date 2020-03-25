@@ -2,100 +2,12 @@
 
 #p1 {
 	@extend %full-page;
-	@include background(url("../assets/firstLogo.png"),#3489aae8,true,true);
 	@extend %parallax;
+	@for $i from 1 through 4 {
+		$subName: subp + #{$i};
+		div ##{$subName} {
+			position: absolute;
 
-	#welcome {
-		@include text-font-color-and-size-align(inherit,rgb(26, 9, 9),7vw,center,true);
-		width: 100%;
-		position: absolute;
-		top: 20%;
-		animation: welcomeanum 10s infinite;
-
-		@mixin welcomeanumoff {
-			opacity: 0;
-			font-size: 0.0001;
-		}
-		@mixin welcomeanumhalf {
-			opacity: 0;
-			font-size: 7vw;
-		}
-
-		@keyframes welcomeanum {
-			0% {
-				@include welcomeanumoff;
-			}
-			20% {
-				@include welcomeanumoff;
-			}
-			40% {
-				@include welcomeanumhalf;
-			}
-			60% {
-				opacity: 1;
-				font-size: 7vw;
-			}
-			80% {
-				@include welcomeanumhalf;
-			}
-			100% {
-				@include welcomeanumoff;
-			}
 		}
 	}
-
-	$b612monospace : 'B612 Mono', monospace;
-
-	#hal {
-		width: 100%;
-		position: absolute;
-		top: 35%;
-		@include text-font-color-and-size-align($b612monospace,black,8vw,center,true);
-	
-	}
-	
-	#hal span {
-		animation: halspananum 10s infinite;
-
-		@mixin halspananumoff {
-			opacity: 0;
-			font-size: 0.0001;
-		}
-
-		@mixin halspananumofffok {
-			opacity: 0;
-			font-size: 8vw;
-		}
-
-		@keyframes halspananum {
-			0% {
-				@include halspananumoff;
-			}
-			20% {
-				@include halspananumoff;
-			}
-			40% {
-				@include halspananumofffok;
-			}
-			60% {
-				opacity: 1;
-				font-size: 8vw;
-			}
-			80% {
-				@include halspananumofffok;
-			}
-			100% {
-				@include halspananumoff;
-			}
-		}
-	}
-}
-
-#p2 {
-	@extend %full-page;
-	@include background(linear-gradient(to right, #343434, black),#3489aae8,true,false);
-	@include text-font-color-and-size-align(inherit,white,3.5vw,center,true);
-	padding-right: 10%;
-	padding-left: 10%;
-	padding-top: 10%;
 }
