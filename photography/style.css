@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	margin: 0;
 	overflow-x: hidden;
@@ -170,6 +174,53 @@ a {
 	text-align: center;
 }
 
+#navbar {
+	height: 80vh;
+	width: 100vw;
+	position: fixed;
+	top: 10vh;
+	right: 95vw;
+	transition: all 1s;
+	background-color: rgba(71, 68, 68, 0.801);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-content: center;
+	text-align: center;
+}
+
+#navbar:hover {
+	right: 0;
+	background-color: rgb(255, 255, 255);
+	color: black;
+	transition: all 1s;
+}
+
+#navbar:hover a {
+	color: black;
+	transition: all 1s;
+}
+
+#navbar a {
+	text-emphasis: none;
+	text-decoration: none;
+	color: white;
+	transition: all 1s;
+}
+
+.navbar_element {
+	transition: all 1s;
+	background-color: rgba(158, 158, 158, 0);
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.navbar_element:hover {
+	background-color: rgb(158, 158, 158);
+	transition: all 1s;
+}
+
 @media screen and (min-width: 500px) {
 	.full {
 		height: 100vh;
@@ -328,5 +379,33 @@ a {
 		-webkit-text-fill-color: transparent;
 		align-self: center;
 		text-align: center;
+	}
+
+	#navbar {
+		height: 80vh;
+		width: 40vw;
+		position: fixed;
+		top: 10vh;
+		right: 97vw;
+		transition: all 1s;
+		background-color: rgba(71, 68, 68, 0.794);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-content: center;
+		text-align: center;
+		font-size: 4vh;
+		border-bottom-right-radius: 50px;
+		border-top-right-radius: 50px;
+	}
+
+	#navbar:hover {
+		right: 60vw;
+		background-color: rgba(255, 255, 255, 0.938);
+		color: black;
+		transition: all 1s;
+		border-bottom-right-radius: 0px;
+		border-top-right-radius: 0px;
 	}
 }
