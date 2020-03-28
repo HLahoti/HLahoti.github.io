@@ -174,12 +174,42 @@ a {
 	text-align: center;
 }
 
+#navbar_toggle::before {
+	position: fixed;
+	width: 5vh;
+	height: 0.6vh;
+	top: 2vh;
+	left: 2vh;
+	background-color: black;
+	content: "";
+}
+
+#navbar_toggle {
+	position: fixed;
+	width: 5vh;
+	height: 0.6vh;
+	top: 3vh;
+	left: 2vh;
+	background-color: black;
+	transition: all 0.5s;
+}
+
+#navbar_toggle::after {
+	position: fixed;
+	width: 5vh;
+	height: 0.6vh;
+	top: 4vh;
+	left: 2vh;
+	background-color: black;
+	content: "";
+}
+
 #navbar {
-	height: 80vh;
+	height: 90vh;
 	width: 100vw;
 	position: fixed;
 	top: 10vh;
-	right: 95vw;
+	right: 100vw;
 	transition: all 1s;
 	background-color: rgba(71, 68, 68, 0.801);
 	color: white;
@@ -205,7 +235,7 @@ a {
 #navbar a {
 	text-emphasis: none;
 	text-decoration: none;
-	color: white;
+	color: black;
 	transition: all 1s;
 }
 
@@ -217,7 +247,7 @@ a {
 }
 
 .navbar_element:hover {
-	background-color: rgb(158, 158, 158);
+	background-color: rgb(231, 227, 227);
 	transition: all 1s;
 }
 
@@ -382,13 +412,13 @@ a {
 	}
 
 	#navbar {
-		height: 80vh;
-		width: 40vw;
+		height: 90vh;
+		width: 100vw;
 		position: fixed;
 		top: 10vh;
-		right: 97vw;
+		right: 100vw;
 		transition: all 1s;
-		background-color: rgba(71, 68, 68, 0.794);
+		background-color: rgba(71, 68, 68, 0.678);
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -396,16 +426,12 @@ a {
 		align-content: center;
 		text-align: center;
 		font-size: 4vh;
-		border-bottom-right-radius: 50px;
-		border-top-right-radius: 50px;
 	}
 
 	#navbar:hover {
-		right: 60vw;
+		right: 0vw;
 		background-color: rgba(255, 255, 255, 0.938);
 		color: black;
 		transition: all 1s;
-		border-bottom-right-radius: 0px;
-		border-top-right-radius: 0px;
 	}
 }
