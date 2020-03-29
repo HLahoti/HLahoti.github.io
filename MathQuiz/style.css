@@ -4,6 +4,7 @@ body {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
+	
 }
 
 #container {
@@ -15,6 +16,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	background-color: antiquewhite;
+	font-family: 'Roboto Mono', monospace;
 }
 
 #head {
@@ -71,6 +73,7 @@ body {
 	border: 1.5px solid black;
 	padding-left: 1.5px;
 	padding-right: 1.5px;
+	transition: all 0.5s;
 }
 
 #answer input {
@@ -86,25 +89,17 @@ body {
 	font-weight: 500;
 }
 
-#theme {
-	display: inline-flex;
-	height: 5vh;
-	align-self: right;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-#theme div {
-	border-radius: 50%;
-	width: 5vh;
-	height: 5vh;
-}
-
-#light {
-	background-color: antiquewhite;
-}
 #dark {
 	background-color: black;
+	color: white;
+	padding: 0.3em;
+	height: 3vh;
+	width: 40vw;
+	text-align: center;
+	border-radius: 3vh;
+	align-self: center;
+	font-size: 5vw;
+	transition: all 0.5s;
 }
 
 @media screen and (min-width: 700px) {
@@ -117,6 +112,7 @@ body {
 		flex-wrap: wrap;
 		justify-content: space-evenly;
 		background-color: antiquewhite;
+		font-family: 'Roboto Mono', monospace;
 	}
 
 	#head {
@@ -190,24 +186,16 @@ body {
 		font-weight: 500;
 	}
 
-	#theme {
-		display: inline-flex;
-		height: 5vh;
-		align-self: right;
-		flex-direction: row;
-		justify-content: space-evenly;
-	}
-
-	#theme div {
-		border-radius: 50%;
-		width: 5vh;
-		height: 5vh;
-	}
-
-	#light {
-		background-color: antiquewhite;
-	}
 	#dark {
 		background-color: black;
+		color: white;
+		padding: .5em;
+		padding-top: 1.5vh;
+		height: 5vh;
+		width: 10vw;
+		text-align: center;
+		border-radius: 5vh;
+		align-self: center;
+		font-size: 2vh;
+		transition: all 0.5s;
 	}
-}

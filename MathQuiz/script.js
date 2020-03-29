@@ -2,6 +2,10 @@ let highscore_field, currentscore_field;
 let next_btn, submit_btn, answer_field;
 let num1_field, num2_field, operator_field;
 let output_field;
+let submit_btn_style = {
+	opacity: 0,
+	pointerEvents: "none"
+};
 
 window.addEventListener("load", function() {
 	highscore_field = document.getElementById("highscore_text");
@@ -14,10 +18,12 @@ window.addEventListener("load", function() {
 	answer_field = document.getElementById("answer_field");
 	output_field = document.getElementById("check");
 	//
-	document.getElementById("light").addEventListener("click", theme_manager);
 	document.getElementById("dark").addEventListener("click", theme_manager);
 	next_btn.addEventListener("click", next_func);
 	submit_btn.addEventListener("click", submit_func);
+
+	submit_btn.style.opacity = submit_btn_style.opacity;
+	submit_btn.style.pointerEvents = submit_btn_style.pointerEvents;
 });
 
 let highscore, currentscore;
@@ -44,6 +50,10 @@ const start = () => {
 		started = true;
 		next_btn.innerHTML = "next";
 	}
+	submit_btn_style.opacity = 1;
+	submit_btn_style.pointerEvents = "all";
+	submit_btn.style.opacity = submit_btn_style.opacity;
+	submit_btn.style.pointerEvents = submit_btn_style.pointerEvents;
 };
 
 const main = () => {
@@ -60,8 +70,13 @@ const main = () => {
 		multiply_func();
 	}
 	num1_field.innerHTML = num1;
-	num2_field.innerHTML = num2;
+	num2_field.innerHTML = `${num2} =`;
 	operator_field.innerHTML = operator;
+
+	answer_field.value = "";
+
+	submit_btn_style.pointerEvents = "all";
+	submit_btn.style.pointerEvents = submit_btn_style.pointerEvents;
 };
 
 const plus_func = () => {
@@ -145,12 +160,17 @@ const submit_func = () => {
 			output_field.innerHTML = "Correct answer!";
 			answer_correct = true;
 			currentscore += 1;
+			submit_btn_style.pointerEvents = "none";
+			submit_btn.style.pointerEvents = submit_btn_style.pointerEvents;
 		} else if (answer != checkedanswer) {
 			output_field.innerHTML = `Wrong answer, the correct answer is ${checkedanswer}`;
 			answer_correct = false;
 			currentscore = 0;
+			submit_btn_style.pointerEvents = "none";
+			submit_btn.style.pointerEvents = submit_btn_style.pointerEvents;
 		}
 	}
+
 	score_manager();
 };
 
