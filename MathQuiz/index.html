@@ -11,33 +11,163 @@
 		<title>Mental Maths</title>
 	</head>
 	<body>
-		<div id="container">
-			<div id="head">
-				Mental Maths
-			</div>
-			<div id="scoreboard">
-				<div id="highscore">
-					<img src="assets/trophy2.jfif" alt="Highscore" />
-					<div id="highscore_text">0</div>
+		<div id="mega-container">
+			<div class="container">
+				<div class="sub-container">
+					<div class="scoreAndMinMax">
+						<div class="scoreboard">
+							<div class="scorecard" id="highscore">
+								HI:
+								<div id="highscore_text" class="score_text">
+									0
+								</div>
+							</div>
+							<div class="scorecard" id="currentscore">
+								Current:
+								<div id="currentscore_text" class="score_text">
+									0
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="qna">
+						<div class="qna_top">
+							<div class="op-num2">
+								<pre><div id="num_1"></div></pre>
+								<div id="operator"></div>
+								<pre><div id="num_2"></div></pre>
+							</div>
+							<input
+								type="number"
+								id="answer_field"
+								maxlength="6"
+							/>
+							<div class="btn_holder">
+								<div id="submit" class="btn">submit</div>
+								<div id="next" class="btn">start</div>
+							</div>
+						</div>
+						<div id="check"></div>
+					</div>
 				</div>
-				<div id="currentscore">
-					<img src="assets/notebook.jpg" alt="Current score" />
-					<div id="currentscore_text">0</div>
+
+				<div class="settings">
+					<div class="settings-container">
+						<div class="toggle" id="toggle">Colors</div>
+						<div class="bar" id="bar">
+							<div
+								class="bar_element"
+								onclick="colorSchemeSetter('black')"
+							>
+								<div class="color black"></div>
+								<div class="text">Color</div>
+							</div>
+							<div
+								class="bar_element"
+								onclick="colorSchemeSetter('sepia')"
+							>
+								<div class="color sepia"></div>
+								<div class="text">Color</div>
+							</div>
+							<div
+								class="bar_element"
+								onclick="colorSchemeSetter('white')"
+							>
+								<div class="color white"></div>
+								<div class="text">Color</div>
+							</div>
+						</div>
+					</div>
+					<div class="settings-container">
+						<div class="toggle" id="toggle2">Settings</div>
+						<div class="bar" id="bar2">
+							<div class="bar_element settingBar_elements">
+								<div class="operator-text">+</div>
+								<input
+									class="checkbox"
+									type="checkbox"
+									name="plus"
+									id="plus"
+								/>
+								<input
+									type="text"
+									class="maxnum"
+									id="addmax"
+									placeholder="max"
+								/>
+								<input
+									type="text"
+									class="minnum"
+									id="addmin"
+									placeholder="min"
+								/>
+							</div>
+							<div class="bar_element settingBar_elements">
+								<div class="operator-text">-</div>
+								<input
+									class="checkbox"
+									type="checkbox"
+									name="minus"
+									id="minus"
+								/>
+								<input
+									type="text"
+									class="maxnum"
+									id="minusmax"
+									placeholder="max"
+								/>
+								<input
+									type="text"
+									class="minnum"
+									id="minusmin"
+									placeholder="min"
+								/>
+							</div>
+							<div class="bar_element settingBar_elements">
+								<div class="operator-text">X</div>
+								<input
+									class="checkbox"
+									type="checkbox"
+									name="multiply"
+									id="multiply"
+								/>
+								<input
+									type="text"
+									class="maxnum"
+									id="multiplymax"
+									placeholder="max"
+								/>
+								<input
+									type="text"
+									class="minnum"
+									id="multiplymin"
+									placeholder="min"
+								/>
+							</div>
+							<div class="bar_element settingBar_elements">
+								<div class="operator-text">&#247;</div>
+								<input
+									class="checkbox"
+									type="checkbox"
+									name="divide"
+									id="divide"
+								/>
+								<input
+									type="text"
+									class="maxnum"
+									id="dividemax"
+									placeholder="max"
+								/>
+								<input
+									type="text"
+									class="minnum"
+									id="dividemin"
+									placeholder="min"
+								/>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div id="question">
-				<div id="num_1"></div>
-				<div id="operator"></div>
-				<div id="num_2"></div>
-			</div>
-			<div id="answer">
-				<input type="number" id="answer_field" />
-				<div id="submit">submit</div>
-				<div id="next">start</div>
-			</div>
-			<div id="check"></div>
-			<div id="dark">
-				Change theme
 			</div>
 		</div>
 	</body>
