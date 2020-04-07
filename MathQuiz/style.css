@@ -218,3 +218,39 @@ pre {
 	border-radius: 1.3em;
 	padding: 0.1em;
 }
+
+@media only screen and (max-width: 500px) {
+	body {
+		overflow-y: scroll;
+	}
+
+	.container {
+		height: 200vh;
+		grid-template-columns: 100%;
+		grid-template-rows: 50% 50%;
+	}
+
+	.sub-container {
+		grid-template-columns: 100%;
+		grid-template-rows: 30% 70%;
+	}
+
+	#check {
+		margin-top: 0.5em;
+	}
+
+	.settings {
+		align-content: center;
+	}
+
+	.toggle {
+		height: 1.6em;
+		width: 80%;
+		margin: auto;
+	}
+
+	.bar_element {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

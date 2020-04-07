@@ -211,13 +211,14 @@ const main = () => {
 	} else if (operator_index == 1) {
 		minus_func();
 	} else if (operator_index == 2) {
-		divide_func();
-	} else if (operator_index == 3) {
 		multiply_func();
+	} else if (operator_index == 3) {
+		divide_func();
 	}
 	num1_field.innerHTML = spaceAdder(num1);
 	num2_field.innerHTML = spaceAdder(num2);
 	submit_btn.style.pointerEvents = "all";
+	operator_field.innerHTML = operator;
 	answer_field.value = "";
 	answer_field.style.borderTop = `4px solid ${colorSchemes[current_color_scheme].accents}`;
 	answer_field.style.borderBottom = `4px solid ${colorSchemes[current_color_scheme].accents}`;
@@ -226,7 +227,6 @@ const main = () => {
 const plus_func = () => {
 	let maxint = plus.maxnum,
 		minint = plus.minnum;
-	operator_field.innerHTML = operator;
 	num1 = Math.floor(Math.random() * (maxint - minint) + minint);
 	num2 = Math.floor(Math.random() * (maxint - minint) + minint);
 	checkedanswer = num1 + num2;
@@ -235,7 +235,6 @@ const plus_func = () => {
 const minus_func = () => {
 	let maxint = minus.maxnum,
 		minint = minus.minnum;
-	operator_field.innerHTML = operator;
 	num1 = Math.floor(Math.random() * (maxint - minint + 1) + minint);
 	num2 = Math.floor(Math.random() * (maxint - minint + 1) + minint);
 	num2 = num2 == num1 ? num2 - 1 : num2;
@@ -252,7 +251,6 @@ const divide_func = () => {
 		minint1 = divide_1st.minnum,
 		maxint2 = divide_2nd.maxnum,
 		minint2 = divide_2nd.minnum;
-	operator_field.innerHTML = operator;
 	// num1_field.style.borderBottom = `3px solid ${colorSchemes[current_color_scheme].accents}`;
 	while (true != false) {
 		num1 = Math.floor(Math.random() * (maxint1 - minint1 + 1) + minint1);
@@ -276,7 +274,6 @@ const multiply_func = () => {
 		minint1 = multiply_1st.minnum,
 		maxint2 = multiply_2nd.maxnum,
 		minint2 = multiply_2nd.minnum;
-	operator_field.innerHTML = operator;
 	num1 = Math.floor(Math.random() * (maxint1 - minint1 + 1) + minint1);
 	num2 = Math.floor(Math.random() * (maxint2 - minint2 + 1) + minint2);
 	checkedanswer = num1 * num2;
