@@ -36,6 +36,7 @@ let isBarVisible = false,
 			accents: "white",
 			navbarSide: "5vw solid rgba(225,225,225, 0.87)",
 			navbarHoverSide: "5vw solid rgba(225,225,225, 0.0)",
+			navbarBg: "black",
 		},
 		sepia: {
 			bg: "antiquewhite",
@@ -43,6 +44,7 @@ let isBarVisible = false,
 			accents: "black",
 			navbarSide: "5vw solid rgba(47, 47, 47, 0.87)",
 			navbarHoverSide: "5vw solid rgba(47, 47, 47, 0.0)",
+			navbarBg: "antiquewhite",
 		},
 		white: {
 			bg: "white",
@@ -50,6 +52,7 @@ let isBarVisible = false,
 			accents: "black",
 			navbarSide: "5vw solid rgba(47, 47, 47, 0.87)",
 			navbarHoverSide: "5vw solid rgba(47, 47, 47, 0.0)",
+			navbarBg: "white",
 		},
 	},
 	current_color_scheme = "sepia",
@@ -110,27 +113,32 @@ const colorSchemeSetter = (color) => {
 	const navbar = classGetter("settings");
 	for (let i = 0; i < navbar.length; i++) {
 		navbar[i].style.borderRight = `${colorSchemes[color].navbarSide}`;
-		navbar[i].style.backgroundColor = colorSchemes[color].bg;
+		navbar[i].style.backgroundColor = colorSchemes[color].navbarBg;
 	}
 };
 
-setInterval(() => {
-	if (screen.width >= 500) {
+const screenAdjust = () => {
+	if (screen.width >= 750) {
 		for (obj in colorSchemes) {
 			colorSchemes[obj].navbarSide = "none";
 			colorSchemes[obj].navbarHoverSide = "none";
+			colorSchemes[obj].navbarBg = "rgba(0,0,0,0)";
 		}
-		colorSchemeSetter(current_color_scheme);
 	} else {
 		colorSchemes.black.navbarSide = "5vw solid rgba(225,225,225, 0.87)";
 		colorSchemes.black.navbaHoverSide = "5vw solid rgba(225,225,225, 0.0)";
+		colorSchemes.black.navbarBg = "black";
 		colorSchemes.sepia.navbarSide = "5vw solid rgba(47, 47, 47, 0.87)";
 		colorSchemes.sepia.navbaHoverSide = "5vw solid rgba(47, 47, 47, 0.0)";
-		colorSchemes.black.navbarSide = "5vw solid rgba(47, 47, 47, 0.87)";
-		colorSchemes.black.navbaHoverSide = "5vw solid rgba(47, 47, 47, 0.0)";
-		colorSchemeSetter(current_color_scheme);
+		colorSchemes.sepia.navbarBg = "antiquewhite";
+		colorSchemes.white.navbarSide = "5vw solid rgba(47, 47, 47, 0.87)";
+		colorSchemes.white.navbaHoverSide = "5vw solid rgba(47, 47, 47, 0.0)";
+		colorSchemes.white.navbarBg = "white";
 	}
-}, 1000);
+	colorSchemeSetter(current_color_scheme);
+};
+
+screenAdjust();
 
 const operator_editor = () => {
 	let list = [];
@@ -228,6 +236,7 @@ const main = () => {
 	answer_field.value = "";
 	answer_field.style.borderTop = `4px solid ${colorSchemes[current_color_scheme].accents}`;
 	answer_field.style.borderBottom = `4px solid ${colorSchemes[current_color_scheme].accents}`;
+	screenAdjust();
 };
 
 const switchero = () => {
