@@ -220,11 +220,7 @@ pre {
 	padding: 0.1em;
 }
 
-@media only screen and (max-width: 500px) {
-	body {
-		overflow-y: scroll;
-	}
-
+@media only screen and (max-width: 750px) {
 	.container {
 		height: 100vh;
 		grid-template-columns: 100%;
