@@ -135,6 +135,7 @@ pre {
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: 0.5em;
+	border: none;
 }
 
 .toggle {
@@ -225,9 +226,9 @@ pre {
 	}
 
 	.container {
-		height: 200vh;
+		height: 100vh;
 		grid-template-columns: 100%;
-		grid-template-rows: 50% 50%;
+		grid-template-rows: 100%;
 	}
 
 	.sub-container {
@@ -241,6 +242,16 @@ pre {
 
 	.settings {
 		align-content: center;
+		position: fixed;
+		width: 80vw;
+		right: 95vw;
+		transition: all 0.7s;
+		border-right: 5vw solid rgba(47, 47, 47, 0.87);
+		background-color: antiquewhite;
+	}
+	.settings:hover {
+		right: 10vw;
+		border-right: 5vw solid rgba(49, 49, 49, 0);
 	}
 
 	.toggle {
