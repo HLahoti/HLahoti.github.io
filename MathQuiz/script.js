@@ -70,7 +70,7 @@ let isBarVisible = false,
 	divide_1st = { maxnum: 600, minnum: 10 },
 	divide_2nd = { maxnum: 30, minnum: 2 };
 
-const colorSchemeSetter = (color) => {
+const colorSchemeSetter = (color, event) => {
 	current_color_scheme = color;
 	const container = idGetter("mega-container");
 	container.style.backgroundColor = colorSchemes[color].bg;
@@ -236,6 +236,7 @@ const main = () => {
 	answer_field.value = "";
 	answer_field.style.borderTop = `4px solid ${colorSchemes[current_color_scheme].accents}`;
 	answer_field.style.borderBottom = `4px solid ${colorSchemes[current_color_scheme].accents}`;
+	output_field.innerHTML = "";
 	screenAdjust();
 };
 
