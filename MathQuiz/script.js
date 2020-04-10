@@ -25,7 +25,10 @@ const highscore_field = idGetter("highscore_text"),
 	multiply_max = idGetter("multiplymax"),
 	multiply_min = idGetter("multiplymin"),
 	divide_max = idGetter("dividemax"),
-	divide_min = idGetter("dividemin");
+	divide_min = idGetter("dividemin"),
+	nav = idGetter("nav"),
+	toggles = classGetter("settings-container"),
+	checkboxes = classGetter("checkbox");
 
 let isBarVisible = false,
 	isSettingsBarVisible = false,
@@ -138,8 +141,6 @@ const screenAdjust = () => {
 	colorSchemeSetter(current_color_scheme);
 };
 
-screenAdjust();
-
 const operator_editor = () => {
 	let list = [];
 	if (operatorsSelected.plus) {
@@ -169,24 +170,37 @@ let highscore = 0,
 	answer_correct = true,
 	started = false;
 
+const typeChecker = (value) => {
+	return (
+		!isNaN(value) &&
+		(function (x) {
+			return (x | 0) === x;
+		})(parseFloat(value))
+	);
+};
+
+const rangeEditor = (effector, event) => {
+	if (typeChecker(event.currentTarget.value)) {
+		effector[event.currentTarget.className] = parseInt(
+			event.currentTarget.value
+		);
+	}
+};
+
 const addRangeEditor = (event) => {
-	plus[event.currentTarget.className] = parseInt(event.currentTarget.value);
+	rangeEditor(plus, event);
 };
 
 const subtractRangeEditor = (event) => {
-	minus[event.currentTarget.className] = parseInt(event.currentTarget.value);
+	rangeEditor(minus, event);
 };
 
 const multiplyRangeEditor = (event) => {
-	multiply_2nd[event.currentTarget.className] = parseInt(
-		event.currentTarget.value
-	);
+	rangeEditor(multiply_2nd, event);
 };
 
 const divideRangeEditor = (event) => {
-	divide_2nd[event.currentTarget.className] = parseInt(
-		event.currentTarget.value
-	);
+	rangeEditor(divide_2nd, event);
 };
 
 const checkHandler = (event) => {
@@ -363,15 +377,25 @@ const toggleBar = (event) => {
 	}
 };
 
+const Subscribe = (event, element, func) => {
+	if (element.addEventListener) {
+		element.addEventListener(event, func, false);
+	} else if (element.attachEvent) {
+		element.attachEvent("on" + event, func);
+	} else {
+		element["on" + event] = func;
+	}
+};
+
 const preset = () => {
 	colorSchemeSetter(current_color_scheme);
 	operator_editor();
+	screenAdjust();
 
-	next_btn.addEventListener("click", next_func);
-	submit_btn.addEventListener("click", submit_func);
-	toggle.addEventListener("click", toggleBar);
-	toggle2.addEventListener("click", toggleBar);
-	const checkboxes = classGetter("checkbox");
+	Subscribe("click", next_btn, next_func);
+	Subscribe("click", submit_btn, submit_func);
+	Subscribe("click", toggle, toggleBar);
+	Subscribe("click", toggle2, toggleBar);
 
 	add_max.value = "";
 	add_min.value = "";
@@ -381,35 +405,34 @@ const preset = () => {
 	multiply_min.value = "";
 	divide_max.value = "";
 	divide_min.value = "";
-	//
-	add_max.addEventListener("change", addRangeEditor);
-	add_min.addEventListener("change", addRangeEditor);
-	subtract_max.addEventListener("change", subtractRangeEditor);
-	subtract_min.addEventListener("change", subtractRangeEditor);
-	multiply_max.addEventListener("change", multiplyRangeEditor);
-	multiply_min.addEventListener("change", multiplyRangeEditor);
-	divide_max.addEventListener("change", divideRangeEditor);
-	divide_min.addEventListener("change", divideRangeEditor);
+
+	Subscribe("change", add_max, addRangeEditor);
+	Subscribe("change", add_min, addRangeEditor);
+	Subscribe("change", subtract_max, subtractRangeEditor);
+	Subscribe("change", subtract_min, subtractRangeEditor);
+	Subscribe("change", multiply_max, multiplyRangeEditor);
+	Subscribe("change", multiply_min, multiplyRangeEditor);
+	Subscribe("change", divide_max, divideRangeEditor);
+	Subscribe("change", divide_min, divideRangeEditor);
 	for (let i = 0; i < checkboxes.length; i++) {
-		checkboxes[i].addEventListener("click", checkHandler);
+		Subscribe("click", checkboxes[i], checkHandler);
 	}
-	let toggles = classGetter("settings-container");
 	for (let i = 0; i < toggles.length; i++) {
-		toggles[i].onmouseover = () => {
+		Subscribe("mouseover", toggles[i], () => {
 			nav.style.borderRight = `${colorSchemes[current_color_scheme].navbarHoverSide}`;
-		};
-		toggles[i].addEventListener("mouseout", () => {
+		});
+		Subscribe("mouseout", toggles[i], () => {
 			nav.style.borderRight = `${colorSchemes[current_color_scheme].navbarHoverSide}`;
 		});
 	}
-	let nav = idGetter("nav");
-	nav.onmouseover = () => {
-		nav.style.borderRight = `${colorSchemes[current_color_scheme].navbarHoverSide}`;
-	};
-	nav.addEventListener("mouseout", () => {
-		nav.style.borderRight = `${colorSchemes[current_color_scheme].navbarSide}`;
+	Subscribe("mouseover", nav, () => {
+		nav.style.borderRight =
+			colorSchemes[current_color_scheme].navbarHoverSide;
 	});
-	//
+	Subscribe("mouseout", nav, () => {
+		nav.style.borderRight = colorSchemes[current_color_scheme].navbarSide;
+	});
+
 	answer_field.value = "";
 	submit_btn.style.opacity = 0;
 	submit_btn.style.pointerEvents = "none";
