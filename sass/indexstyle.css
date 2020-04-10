@@ -1,0 +1,33 @@
+body {
+  margin: 0%;
+  overflow-x: hidden;
+}
+
+#p1 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#p1 {
+  height: 100%;
+  width: 100%;
+}
+
+#p1 div #subp + 1 {
+  position: absolute;
+}
+
+#p1 div #subp + 2 {
+  position: absolute;
+}
+
+#p1 div #subp + 3 {
+  position: absolute;
+}
+
+#p1 div #subp + 4 {
+  position: absolute;
+}
+/*# sourceMappingURL=indexstyle.css.map */
