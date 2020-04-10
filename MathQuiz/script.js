@@ -98,6 +98,7 @@ const colorSchemeSetter = (color, event) => {
 		bar_elements[
 			i
 		].style.border = `3px solid ${colorSchemes[color].accents}`;
+		bar_elements[i].style.backgroundColor = colorSchemes[color].bg;
 	}
 	const colors = classGetter("color");
 	for (let i = 0; i < colors.length; i++) {
@@ -113,11 +114,8 @@ const colorSchemeSetter = (color, event) => {
 		inputs[i].style.border = `1px solid ${colorSchemes[color].accents}`;
 		inputs[i].style.color = colorSchemes[color].text;
 	}
-	const navbar = classGetter("settings");
-	for (let i = 0; i < navbar.length; i++) {
-		navbar[i].style.borderRight = `${colorSchemes[color].navbarSide}`;
-		navbar[i].style.backgroundColor = colorSchemes[color].navbarBg;
-	}
+	nav.style.borderRight = colorSchemes[color].navbarSide;
+	nav.style.backgroundColor = colorSchemes[color].bg;
 };
 
 const screenAdjust = () => {

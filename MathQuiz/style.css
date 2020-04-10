@@ -202,13 +202,14 @@ pre {
           justify-content: flex-start;
   padding: 0.5em;
   border: none;
+  background-color: antiquewhite;
 }
 
 .toggle {
-  height: 5%;
+  height: 5vh;
   width: 60%;
-  border-radius: 1.2em;
-  font-size: 1.2em;
+  border-radius: 5vh;
+  font-size: 4vh;
   padding: 0.2em;
   background-color: black;
   color: white;
