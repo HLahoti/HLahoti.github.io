@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+  color: inherit;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#container {
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+  color: gold;
+  background-color: black;
+  min-height: 100vh;
+  font-family: "Unica One", cursive;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+  padding: 1.6em;
+  overflow: hidden;
+}
+
+.headL {
+  font-size: 3.8em;
+  text-align: center;
+}
+
+.headM {
+  font-size: 2.3em;
+}
+
+#p1 {
+  overflow: hidden;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    -webkit-transform: rotateX(60deg), translate(0, 60%);
+            transform: rotateX(60deg), translate(0, 60%);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg), translate(0, 0);
+            transform: rotateX(0deg), translate(0, 0);
+  }
+}
+
+@keyframes intro {
+  0% {
+    -webkit-transform: rotateX(60deg), translate(0, 60%);
+            transform: rotateX(60deg), translate(0, 60%);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg), translate(0, 0);
+            transform: rotateX(0deg), translate(0, 0);
+  }
+}
+
+#perspective {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-animation-name: intro;
+          animation-name: intro;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+}
+
+#perspective h1 {
+  font-weight: 1100;
+  letter-spacing: 3px;
+}
+
+#perspective h2 {
+  font-weight: 300;
+  text-align: center;
+  opacity: 0.85;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#perspective a {
+  opacity: 0.87;
+}
+
+#p1::-moz-selection {
+  color: black;
+  background-color: gold;
+}
+
+#p1::selection {
+  color: black;
+  background-color: gold;
+}
+/*# sourceMappingURL=style.css.map */

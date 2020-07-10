@@ -1,0 +1,85 @@
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	text-emphasis: none;
+	color: inherit;
+	transition: all 0.3s;
+}
+
+#container {
+	width: 100vw;
+	margin: 0;
+	overflow-x: hidden;
+	color: gold;
+	// background-color: rgb(6, 49, 88);
+	background-color: black;
+	min-height: 100vh;
+	font-family: "Unica One", cursive;
+}
+
+.full {
+	height: 100%;
+	width: 100%;
+	padding: 1.6em;
+	overflow: hidden;
+}
+
+.headL {
+	font-size: 3.8em;
+
+	text-align: center;
+}
+
+.headM {
+	font-size: 2.3em;
+}
+
+//@extend
+
+#p1 {
+	overflow: hidden;
+}
+
+@keyframes intro {
+	0% {
+		transform: rotateX(60deg), translate(0, 60%);
+	}
+	100% {
+		transform: rotateX(0deg), translate(0, 0);
+	}
+}
+
+#perspective {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	transition: all 0.5s;
+	transform-style: preserve-3d;
+	animation-name: intro;
+	animation-duration: 6s;
+	h1 {
+		font-weight: 1100;
+		letter-spacing: 3px;
+	}
+	h2 {
+		font-weight: 300;
+		text-align: center;
+		opacity: 0.85;
+		align-self: center;
+	}
+
+	a {
+		opacity: 0.87;
+	}
+}
+
+#p1::selection {
+	color: black;
+	background-color: gold;
+}

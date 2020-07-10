@@ -258,6 +258,7 @@ const switchero = () => {
 		num2 = num1 - num2;
 		num1 = num1 - num2;
 	}
+	// interchanges the numbers
 };
 
 const plus_func = () => {
